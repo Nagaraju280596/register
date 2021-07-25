@@ -1,0 +1,38 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<h1>Register Here</h1>
+<div class="form">
+    <div class="formbox">
+        <h6>First Name*</h6>
+        <input type="text" [(ngModel)]="fname">
+    </div>
+    <div class="formbox">
+        <h6>Last Name*</h6>
+        <input type="text" [(ngModel)]="lname">
+    </div>
+    <div class="formbox">
+        <h6>Email*</h6>
+        <input type="email" [(ngModel)]="email">
+    </div>
+    <div class="formbox">
+        <h6>Mobile Number*</h6>
+        <input type="text" [(ngModel)]="num">
+    </div>
+    <div class="formbox">
+        <h6>Enter Password*</h6>
+        <input type="password" [(ngModel)]="pass1" [type]="hide? 'password':'text'">
+        <i class="material-icons" (click)="hide= !hide">{{hide ? 'visibility':'visibility_off'}}</i>
+        
+    </div>
+    <div class="formbox">
+        <h6>Confirm Password*</h6>
+        <input type="password" [(ngModel)]="pass2">
+    </div>
+    <div class="errors">
+        <ul>
+            <li *ngFor="let x of errors">{{x}}</li>
+        </ul>
+    </div>
+    <div class="submit">
+        <button type="button" class="btn btn-primary" (click)="submit()">Register</button>
+    </div>
+</div>
